@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/nikitatiskov/CLionProjects/sashalab/functions.cpp
+header.h
+/Users/nikitatiskov/CLionProjects/sashalab/header.h
+fstream
+-
+
+/Users/nikitatiskov/CLionProjects/sashalab/header.h
+iostream
+-
+fstream
+-
+
