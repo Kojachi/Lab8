@@ -258,3 +258,50 @@ void write(K* x, K* y) {
         cout << "error" << endl;
     }
 }
+void showZ(K* x,K* y) {
+    K *end1 = x;
+    K *end2 = y;
+    int length1 = 0, length2 = 0; // длины списков
+    for (K *end = x; end != NULL; end = end->next) {
+        length1++; // от указателя, что указывает на первый элемент до того как он не будет указывать на нулевой (с шагом указателем на следующий элемент) увеличиваем перемнную на 1
+    }
+    for (K *end = y; end != NULL; end = end->next) {
+        length2++;
+    }
+    char **mas1 = new char *[length1];
+    char **mas2 = new char *[length2];
+    K **masK1 = new K *[length1];
+    K **masK2 = new K *[length2];
+    for (int i = 0; end1 != NULL; i++) {
+        mas1[i] = end1->a;
+        masK1[i] = end1->next;
+        end1 = end1->next;
+    }
+    for (int i = 0; end2 != NULL; i++) {
+        mas2[i] = end2->a;
+        masK2[i] = end2->next;
+        end2 = end2->next;
+    }
+    K *beginZ = new K;
+    K *endZ = beginZ;
+    for (int i = length1 - 1; i >= 0; i--) {
+        endZ->a = mas1[i];
+        endZ->next = new K;
+        endZ = endZ->next;
+    }
+    for (int i = length2 - 1; i >= 1; i--) {
+        endZ->a = mas2[i];
+        endZ->next = new K;
+        endZ = endZ->next;
+    }
+    endZ->a = mas2[0];
+    endZ->next = NULL;
+    endZ = beginZ;
+    ofstream fout("Lists.txt"); //gfdgdgdg
+    while (endZ != NULL) {
+        if (fout) {
+            fout << endZ->a << "->" << endl;
+            endZ = endZ->next;
+        }
+    }
+}

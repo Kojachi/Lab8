@@ -5,7 +5,7 @@ int main() {
     int menu;
     int i = 1;
     K* begin1; //указатель на первый элемент 1 списка
-    K* begin2; //указатель на первый элемент 2 списка
+    K* begin2;//указатель на первый элемент 2 спискa
     begin1 = funct(i); //виклик функції
     begin2 = funct(i);
     while (true) {
@@ -42,6 +42,10 @@ int main() {
             case 6:
                 cout << "Make file" << endl;
                 write(begin1, begin2);
+                break;
+            case 7:
+                cout << "Show Z" << endl;
+                showZ(begin1, begin2);
                 break;
             case 0:
                 return 0;

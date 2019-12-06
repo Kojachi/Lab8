@@ -19,5 +19,5 @@ void involvings(K*, K*);
 void similar(K*, K*);
 void replace(K*&, K*&);
 void write(K*, K*);
-
+void showZ(K*,K*);
 #endif //SASHALAB_HEADER_H
